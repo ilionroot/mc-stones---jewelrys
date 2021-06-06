@@ -119,7 +119,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Container onScroll={scrolligu}>
+    <Container>
       <View id="firstContainer">
         <div id="resume">
           <h1>MG Stones & Jewelry's</h1>

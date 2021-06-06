@@ -328,6 +328,8 @@ export const Container = styled.div`
       position: absolute;
       z-index: 1;
 
+      will-change: left top transform;
+
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -351,6 +353,7 @@ export const Container = styled.div`
         border-radius: 1rem;
         position: absolute;
         right: 50%;
+        will-change: right left bottom top transform height;
         z-index: -1;
 
         transform: translateX(50%);
@@ -367,6 +370,7 @@ export const Container = styled.div`
           width: 75vw;
           height: 4rem;
 
+          will-change: left top transform;
           background: transparent;
           color: snow;
           cursor: pointer;
@@ -399,6 +403,7 @@ export const Container = styled.div`
     #rightContent {
       width: auto;
       position: absolute;
+      will-change: left top transform;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -519,12 +524,12 @@ export const Container = styled.div`
 
     #secondContainer {
       #leftContent {
-        animation-name: ${leftAnimationMobile};
+        /* animation-name: ${leftAnimationMobile}; */
 
         span {
           left: 0%;
           bottom: 50%;
-          animation-name: ${leftBarAnimationMobile};
+          /* animation-name: ${leftBarAnimationMobile}; */
 
           button {
             width: 85vw;
@@ -543,7 +548,7 @@ export const Container = styled.div`
         top: 50%;
         left: 55%;
         height: 100%;
-        animation-name: ${rightAnimationMobile};
+        /* animation-name: ${rightAnimationMobile}; */
 
         h2 {
           color: white;
