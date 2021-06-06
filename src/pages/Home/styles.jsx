@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-const leftAnimation = keyframes`
+export const leftAnimation = keyframes`
   0% {
     width: 0;
     opacity: 0;
@@ -29,7 +29,7 @@ const leftAnimation = keyframes`
   }
 `;
 
-const leftAnimationMobile = keyframes`
+export const leftAnimationMobile = keyframes`
   0% {
     width: 0;
     opacity: 0;
@@ -62,7 +62,7 @@ const leftAnimationMobile = keyframes`
   }
 `;
 
-const leftBarAnimation = keyframes`
+export const leftBarAnimation = keyframes`
   0% {
     height: 0px;
   }
@@ -72,7 +72,7 @@ const leftBarAnimation = keyframes`
   }
 `;
 
-const leftBarAnimationMobile = keyframes`
+export const leftBarAnimationMobile = keyframes`
   0% {
     height: 0;
   }
@@ -83,7 +83,7 @@ const leftBarAnimationMobile = keyframes`
   }
 `;
 
-const goDownButtonAnimation = keyframes`
+export const goDownButtonAnimation = keyframes`
   0% {
     transform: translateY(25%);
   }
@@ -94,7 +94,7 @@ const goDownButtonAnimation = keyframes`
   }
 `;
 
-const rightAnimation = keyframes`
+export const rightAnimation = keyframes`
   0% {
     height: 4rem;
     background: linear-gradient(
@@ -135,7 +135,7 @@ const rightAnimation = keyframes`
   }
 `;
 
-const rightAnimationMobile = keyframes`
+export const rightAnimationMobile = keyframes`
   0% {
     height: 4rem;
     background: linear-gradient(
@@ -322,6 +322,7 @@ export const Container = styled.div`
     position: relative;
     background: rgba(0, 0, 0, 0.75);
     color: snow;
+    overflow: hidden;
 
     #leftContent {
       position: absolute;
@@ -331,7 +332,9 @@ export const Container = styled.div`
       top: 50%;
       transform: translate(-50%, -50%);
 
-      animation-name: ${leftAnimation};
+      opacity: 0;
+
+      /* animation-name: ${leftAnimation}; */
       animation-duration: 2s;
       animation-timing-function: cubic-bezier(0, 0, 0.36, 1.16);
       animation-fill-mode: forwards;
@@ -352,7 +355,7 @@ export const Container = styled.div`
 
         transform: translateX(50%);
 
-        animation-name: ${leftBarAnimation};
+        /* animation-name: ${leftBarAnimation}; */
         animation-delay: 3s;
         animation-duration: 1s;
         animation-timing-function: cubic-bezier(0, 0, 0.36, 1.16);
@@ -380,7 +383,7 @@ export const Container = styled.div`
 
           opacity: 0;
 
-          animation-name: ${goDownButtonAnimation};
+          /* animation-name: ${goDownButtonAnimation}; */
           animation-delay: 4s;
           animation-duration: 1s;
           animation-timing-function: cubic-bezier(0, 0, 0.36, 1.16);
@@ -407,7 +410,7 @@ export const Container = styled.div`
 
       opacity: 0;
 
-      animation-name: ${rightAnimation};
+      /* animation-name: ${rightAnimation}; */
       animation-duration: 2s;
       animation-delay: 1.75s;
       animation-timing-function: cubic-bezier(0, 0, 0.36, 1.16);
@@ -441,7 +444,6 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
       width: 90%;
       height: 75%;
       overflow: hidden;

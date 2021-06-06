@@ -1,8 +1,20 @@
-import { useState } from "react";
-import { Container, Divisor, VerticalDivisor } from "./styles";
+import { useState, useEffect } from "react";
+import {
+  Container,
+  Divisor,
+  VerticalDivisor,
+  goDownButtonAnimation,
+  leftBarAnimationMobile,
+  leftAnimation,
+  rightAnimationMobile,
+  leftBarAnimation,
+  leftAnimationMobile,
+  rightAnimation,
+} from "./styles";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 
 import View from "../../components/View";
+import Product from "../../components/Product";
 
 import esmeralda1 from "../../assets/products/esmeralda1.webp";
 import esmeralda2 from "../../assets/products/esmeralda2.jpg";
@@ -11,7 +23,7 @@ import diamante2 from "../../assets/products/diamante2.jpg";
 
 import emerald from "../../assets/images/emerald.png";
 
-import Product from "../../components/Product";
+import $ from "jquery";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -33,6 +45,8 @@ const item = {
   },
 };
 
+let canExecute = true;
+
 export default function Home() {
   const [selectedId, setSelectedId] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -41,8 +55,71 @@ export default function Home() {
   const [carat, setCarat] = useState("Select one...");
   const [price, setPrice] = useState("Select one...");
 
+  function scrolligu() {
+    let distanceFromTop = $(document).scrollTop();
+    let distanceFromSecondContainer = $("#secondContainer").offset().top;
+    let isMobile = window.outerWidth <= 768;
+
+    if (
+      distanceFromTop >=
+        distanceFromSecondContainer - window.outerHeight * 0.33755274 &&
+      distanceFromTop <= distanceFromSecondContainer * 1.11867704 &&
+      canExecute
+    ) {
+      $("#leftContent").css(
+        "animation-name",
+        isMobile ? leftAnimationMobile.getName() : leftAnimation.getName()
+      );
+      $("#leftContent > span").css(
+        "animation-name",
+        isMobile ? leftBarAnimationMobile.getName() : leftBarAnimation.getName()
+      );
+      $("#leftContent > span > button").css(
+        "animation-name",
+        goDownButtonAnimation.getName()
+      );
+
+      $("#rightContent").css(
+        "animation-name",
+        isMobile ? rightAnimationMobile.getName() : rightAnimation.getName()
+      );
+
+      canExecute = false;
+    }
+  }
+
+  function moveOn() {
+    $("html").animate(
+      {
+        scrollTop:
+          $("#thirdContainer").offset().top - window.outerHeight * 0.08438818,
+      },
+      500
+    );
+  }
+
+  const debounce = (func, wait) => {
+    let timeout;
+
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  };
+
+  useEffect(() => {
+    let returnedFunction = debounce(scrolligu, 50);
+
+    $(document).on("scroll", returnedFunction);
+  }, []);
+
   return (
-    <Container>
+    <Container onScroll={scrolligu}>
       <View id="firstContainer">
         <div id="resume">
           <h1>MG Stones & Jewelry's</h1>
@@ -184,7 +261,7 @@ export default function Home() {
         <div id="leftContent">
           <img src={emerald} alt="Emerald" />
           <span>
-            <button>Move on</button>
+            <button onClick={moveOn}>Move on</button>
           </span>
         </div>
         <div id="rightContent">
@@ -200,10 +277,10 @@ export default function Home() {
       </View>
       <View id="thirdContainer">
         <div id="productsContainer">
-          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
-          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
-          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
-          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
+          <Product image={esmeralda1} name="Esmeralda 1" price="1800.00" />
+          <Product image={diamante1} name="Diamante 1" price="1750.00" />
+          <Product image={esmeralda2} name="Esmeralda 2" price="2200.00" />
+          <Product image={diamante2} name="Diamante 2" price="3400.00" />
         </div>
       </View>
     </Container>

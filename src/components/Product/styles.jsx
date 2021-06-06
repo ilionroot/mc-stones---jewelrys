@@ -6,6 +6,7 @@ export const Container = styled.div`
   background: whitesmoke;
   transition: 100ms ease;
   cursor: pointer;
+  margin: 1rem;
 
   img {
     width: 100%;
