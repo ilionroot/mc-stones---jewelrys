@@ -6,6 +6,8 @@ export const Container = styled.div`
   background: snow;
   box-shadow: 0 0 15px -7.5px black;
   overflow: visible;
+  position: fixed;
+  z-index: 2;
 
   display: flex;
   align-items: center;

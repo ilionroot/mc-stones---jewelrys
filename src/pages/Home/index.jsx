@@ -1,11 +1,17 @@
 import { useState } from "react";
-import { Container, View, Divisor, VerticalDivisor } from "./styles";
+import { Container, Divisor, VerticalDivisor } from "./styles";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+
+import View from "../../components/View";
 
 import esmeralda1 from "../../assets/products/esmeralda1.webp";
 import esmeralda2 from "../../assets/products/esmeralda2.jpg";
 import diamante1 from "../../assets/products/diamante1.png";
 import diamante2 from "../../assets/products/diamante2.jpg";
+
+import emerald from "../../assets/images/emerald.png";
+
+import Product from "../../components/Product";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -37,12 +43,13 @@ export default function Home() {
 
   return (
     <Container>
-      <View>
+      <View id="firstContainer">
         <div id="resume">
           <h1>MG Stones & Jewelry's</h1>
           <p id="resumeText">
-            The store you were waiting for. Come and buy your jewelrys with
-            excellent attendance and several choices!
+            The best Brazilian gemstones and the best prices in American
+            territory, you can find here in our store. Welcome and great
+            shopping
           </p>
 
           <div className="tryStone">
@@ -172,6 +179,32 @@ export default function Home() {
             </AnimatePresence>
           </AnimateSharedLayout>
         </motion.ul>
+      </View>
+      <View id="secondContainer">
+        <div id="leftContent">
+          <img src={emerald} alt="Emerald" />
+          <span>
+            <button>Move on</button>
+          </span>
+        </div>
+        <div id="rightContent">
+          <h2>About us</h2>
+          <p>A text with several points and explanations about the store</p>
+          <ul>
+            <li>This is a point</li>
+            <li>Here we can se another point</li>
+            <li>Dammit, another one</li>
+            <li>Ok, I'm finish</li>
+          </ul>
+        </div>
+      </View>
+      <View id="thirdContainer">
+        <div id="productsContainer">
+          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
+          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
+          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
+          <Product image={esmeralda1} name="Esmeralda 1" price="1200.00" />
+        </div>
       </View>
     </Container>
   );
