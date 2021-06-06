@@ -308,6 +308,8 @@ export const Container = styled.div`
       border-style: dashed;
       border-style: dashed;
 
+      will-change: left bottom transform;
+
       img {
         position: absolute;
         width: 100%;
