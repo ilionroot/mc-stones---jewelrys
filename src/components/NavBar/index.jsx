@@ -2,10 +2,12 @@ import { Container } from "./styles";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Michael - 2.png";
 
+import Menu from "../Menu";
+
 export default function NavBar() {
   return (
     <Container>
-      <img src={logo} id="logo" alt="MG Stones & Jewelry's" />
+      <Menu id="menu" />
       <div
         id="links"
         style={{

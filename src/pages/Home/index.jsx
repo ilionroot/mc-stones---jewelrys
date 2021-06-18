@@ -126,7 +126,7 @@ export default function Home() {
           <p id="resumeText">
             The best Brazilian gemstones and the best prices in American
             territory, you can find here in our store. Welcome and great
-            shopping
+            shopping.
           </p>
 
           <div className="tryStone">
@@ -266,13 +266,16 @@ export default function Home() {
         </div>
         <div id="rightContent">
           <h2>About us</h2>
-          <p>A text with several points and explanations about the store</p>
-          <ul>
-            <li>This is a point</li>
-            <li>Here we can se another point</li>
-            <li>Dammit, another one</li>
-            <li>Ok, I'm finish</li>
-          </ul>
+          <h3>A text with several points and explanations about the store</h3>
+          <p>
+            MG Pedras is a company focused on the sale of Brazilian precious
+            stones to the whole world. Our commercial headquarters are located
+            in the city of Boca Raton (FL). The company is a combination
+            (Holding) between a mining company in Brazil, a lapidary and an
+            American commercial bureau. Aiming at excellence in the quality of
+            stones and expertise in manufacturing processes, the company is born
+            that will serve you in an intelligent and personalized way, welcome.
+          </p>
         </div>
       </View>
       <View id="thirdContainer">

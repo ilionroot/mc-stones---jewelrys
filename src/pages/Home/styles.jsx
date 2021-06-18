@@ -68,7 +68,7 @@ export const leftBarAnimation = keyframes`
   }
 
   100% {
-    height: 50vh;
+    height: 75vh;
   }
 `;
 
@@ -78,8 +78,8 @@ export const leftBarAnimationMobile = keyframes`
   }
 
   100% {
-    height: 65vh;
-    bottom: -360%;
+    height: 60vh;
+    bottom: -350%;
   }
 `;
 
@@ -97,82 +97,109 @@ export const goDownButtonAnimation = keyframes`
 export const rightAnimation = keyframes`
   0% {
     height: 4rem;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 95%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+
+      background: transparent;
+      color: white;
+      max-height: 18rem;
   }
 
   25% {
     height: 4rem;
     opacity: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 95%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+
+      background: transparent;
+      color: white;
+      max-height: 18rem;
   }
 
   50% {
     height: 35%;
     opacity: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 90%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+
+      background: transparent;
+      color: white;
+      max-height: 18rem;
   }
 
   100% {
     height: 35%;
     opacity: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 90%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+
+      background: transparent;
+      color: white;
+      max-height: 18rem;
+      overflow: auto;
   }
 `;
 
 export const rightAnimationMobile = keyframes`
   0% {
-    height: 4rem;
-    background: linear-gradient(
+    height: 6rem;
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 95%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+      background: transparent;
+      color: white;
   }
 
   25% {
-    height: 4rem;
+    height: 6rem;
     opacity: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 95%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+      background: transparent;
+      color: white;
   }
 
   50% {
     height: 47.5%;
     opacity: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 90%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+      background: transparent;
+      color: white;
   }
 
   100% {
     height: 47.5%;
     opacity: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to bottom,
         rgba(255, 255, 255, 1) 90%,
         rgba(255, 255, 255, 0) 100%
-      );
+      ); */
+      background: transparent;
+      color: white;
+      max-height: 18rem;
+      overflow: auto;
   }
 `;
 
@@ -305,8 +332,6 @@ export const Container = styled.div`
       border-width: 6px;
       border-style: dashed;
       border-color: var(--light-green);
-      border-style: dashed;
-      border-style: dashed;
 
       will-change: left bottom transform;
 
@@ -368,7 +393,7 @@ export const Container = styled.div`
 
         button {
           position: absolute;
-          bottom: -17.5%;
+          bottom: -11.5%;
           width: 75vw;
           height: 4rem;
 
@@ -409,10 +434,12 @@ export const Container = styled.div`
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      overflow: hidden;
 
       /* white-space: nowrap; */
-      background-clip: text;
-      -webkit-background-clip: text;
+      /* background-clip: text; */
+      /* -webkit-background-clip: text; */
+      background: transparent;
       color: transparent;
 
       opacity: 0;
@@ -429,9 +456,15 @@ export const Container = styled.div`
         margin-bottom: 1rem;
       }
 
-      p {
+      h3 {
         font-size: 1.5rem;
+        font-weight: normal;
         margin-bottom: 2rem;
+      }
+
+      p {
+        line-height: 1.5rem;
+        text-align: justify;
       }
 
       ul li {
@@ -463,6 +496,10 @@ export const Container = styled.div`
         padding: 1.5rem;
         height: fit-content;
         width: 100%;
+
+        h1 {
+          font-size: 1.75rem;
+        }
 
         #resumeText {
           width: 90%;
@@ -536,7 +573,7 @@ export const Container = styled.div`
           button {
             width: 85vw;
             left: 0;
-            bottom: -13.5%;
+            bottom: -17.5%;
             border-width: 0.25rem;
 
             transform: translateX(0);
@@ -546,10 +583,13 @@ export const Container = styled.div`
 
       #rightContent {
         padding: 2rem;
-        width: 100%;
+        /* width: 100%; */
         top: 50%;
         left: 55%;
         height: 100%;
+        width: 85%;
+
+        overflow: hidden;
         /* animation-name: ${rightAnimationMobile}; */
 
         h2 {
@@ -557,7 +597,7 @@ export const Container = styled.div`
           text-align: start;
         }
 
-        p {
+        h3 {
           font-size: 1.3rem;
           color: white;
         }

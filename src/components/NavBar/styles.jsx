@@ -31,17 +31,9 @@ export const Container = styled.div`
     width: 6rem;
   }
 
-  #logo {
-    display: none;
-  }
-
   @media screen and (max-width: 768px) {
     #links {
       display: none !important;
-    }
-
-    #logo {
-      display: initial;
     }
   }
 `;

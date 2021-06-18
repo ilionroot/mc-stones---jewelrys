@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-import { FiShoppingCart } from "react-icons/all";
+import { BiPhone } from "react-icons/all";
 
 const Product = (props) => {
   return (
@@ -12,8 +12,8 @@ const Product = (props) => {
         <p>
           ${props.price}
           <button>
-            <FiShoppingCart />
-            Buy
+            <BiPhone size={24} />
+            Contact
           </button>
         </p>
       </div>

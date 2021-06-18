@@ -61,11 +61,6 @@ export const Container = styled.div`
 
         transition: 100ms ease;
 
-        svg {
-          width: 1.25rem;
-          height: 1.25rem;
-        }
-
         &:hover {
           background: rgba(0, 0, 0, 0.75);
         }

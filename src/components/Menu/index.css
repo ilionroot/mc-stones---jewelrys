@@ -1,0 +1,30 @@
+.showMenu {
+  transform: translate(0) !important;
+  box-shadow: 0 0 15px -5px black;
+}
+
+.barToggle1 {
+  transform: rotate(45deg) translate(1rem, 0rem);
+}
+
+.barToggle2 {
+  opacity: 0;
+}
+
+.barToggle3 {
+  transform: rotate(-45deg) translate(1rem, 0rem);
+}
+
+.logo {
+  position: absolute;
+  left: 8rem;
+  top: -5rem;
+  z-index: 1;
+  opacity: 0;
+  transition: 500ms ease;
+}
+
+.showLogo {
+  top: -0.5rem;
+  opacity: 1;
+}
